@@ -1,20 +1,29 @@
-// 1. Memilih elemen
-const judul = document.getElementById("judul");
-const sapaan = document.getElementById("sapaan");
+// ===== Bagian A: getElementsByClassName =====
+const buah = document.getElementsByClassName("buah");
  
-// 2. Melihat elemen di Console
-console.log(judul);
-console.log(sapaan);
+console.log(buah);          // lihat koleksinya
+console.log(buah.length);   // jumlah elemen
+console.log(buah[0]);       // elemen pertama
  
-// 3. Mengubah isi teks
-judul.textContent = "Judul Sudah Diubah!";
+// mengubah elemen tertentu
+buah[0].style.color = "red";
  
-// 4. Mengubah warna
-judul.style.color = "crimson";
+// mengubah semua elemen dengan perulangan
+for (let i = 0; i < buah.length; i++) {
+  buah[i].style.fontWeight = "bold";
+  buah[i].textContent = (i + 1) + ". " + buah[i].textContent;
+}
  
-// 5. Mengubah isi dengan tag HTML
-sapaan.innerHTML = "Halo, saya sedang <b>belajar DOM</b>!";
+const semuaH2 = document.getElementsByTagName("h2");
+for (let i = 0; i < semuaH2.length; i++) {
+    semuaH2[i].style.color = "teal";
+}
+
+// ===== Bagian B: getElementsByTagName =====
+const semuaLi = document.getElementsByTagName("li");
  
-// 6. Mencoba id yang tidak ada
-const hantu = document.getElementById("tidakada");
-console.log(hantu);
+console.log(semuaLi.length);
+ 
+for (let i = 0; i < semuaLi.length; i++) {
+  semuaLi[i].style.backgroundColor = "blue";
+}
